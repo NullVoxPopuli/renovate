@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [],  
+  "packageRules": [
+    // devDependencies don't affect consumers of libraries, typically
+    // and are usually pretty easy to upgrade.
+    // they get grouped together to reduce noise.
+    {
+      "groupName": "devDependencies",
+      "matchDepTypes": ["devDependencies"]
+    },
+    
+    // According to renovate's docs:
+    // npm packages less than 72 hours (3 days) old can be unpublished, 
+    // which could result in a service impact if you have already updated to it. 
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
+    }
+  ]
+}  
