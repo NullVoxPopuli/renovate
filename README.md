@@ -38,3 +38,10 @@ in `.github/renovate.json5`
   ]
 }
 ```
+
+## Debugging
+
+Visit: https://developer.mend.io/github/<user>/<repo>
+
+Example: https://developer.mend.io/github/NullVoxPopuli/ember-resources/
+ 
