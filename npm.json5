@@ -1,34 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  
-  // requires tests be thorough and reliable
-  //
-  // NOTE: by default, automerge: true will cause open PRs to be
-  //       rebased immediately when they become out of date.
-  "automerge": true,
-  // renovate can be very noisy
-  // setting this allows all the work to happen the night before the start of the week
-  "schedule": ["after 9pm on sunday"],  
-  // this setting prevents updates to PRs from occurring outside the "schedule",
-  // defined above
-  "updateNotScheduled": false,
-  
-  // provides a UI for trigger upgrade PRs, rebasing, etc
-  "masterIssue": true,
-  
-  // for libraries, we don't typically want to bump "dependencies"
-  // unless we really have to (to get an upstream bugfix, for example)
-  "rangeStrategy": "update-lockfile",
-  
+  "extends": [
+    "github>NullVoxPopuli/renovate:weekly.json5",
+    "github>NullVoxPopuli/renovate:npm-groups.json5"
+  ], 
   "packageRules": [
-    // devDependencies don't affect consumers of libraries, typically
-    // and are usually pretty easy to upgrade.
-    // they get grouped together to reduce noise.
-    {
-      "groupName": "devDependencies",
-      "matchDepTypes": ["devDependencies"]
-    },
     // changing "dependencies", "peerDependencies", or "engines"
     // should be handled with care (manually) as they *may*
     // cause breaking behavior for consumers.
@@ -42,13 +18,6 @@
     {
       "matchDepTypes": ["engines", "peerDependencies", "dependencies"],
       "enabled": false
-    },
-    // According to renovate's docs:
-    // npm packages less than 72 hours (3 days) old can be unpublished, 
-    // which could result in a service impact if you have already updated to it. 
-    {
-      "matchDatasources": ["npm"],
-      "minimumReleaseAge": "3 days"
     }
   ]
-}  
+}
