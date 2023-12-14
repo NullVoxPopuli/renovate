@@ -11,13 +11,19 @@ This repo is a collection of configs for different purposes.
 `github>NullVoxPopuli/renovate:weekly.json5`
 - better defaults for weekly automated updates
 - doesn't constantnly rebase open PRs
+
+`github>NullVoxPopuli/renovate:npm-groups.json5`
+- extends nothing
+- provides opinionated package rules for reduced PR spam
  
 `github>NullVoxPopuli/renovate:npm.json5`
 - extends the weekly config
+- extends the npm-groups config
 - appropriate for npm library development
 
 `github>NullVoxPopuli/renovate:js.json5`
 - extends the weekly config
+- extends the npm-groups config
 - appropriate for javascript application development
 
 ## packages on npm
