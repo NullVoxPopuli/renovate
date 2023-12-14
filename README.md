@@ -44,4 +44,11 @@ in `.github/renovate.json5`
 Visit: https://developer.mend.io/github/<user>/<repo>
 
 Example: https://developer.mend.io/github/NullVoxPopuli/ember-resources/
- 
+
+### Renovate Docs
+
+- https://docs.renovatebot.com/configuration-options/
+- https://docs.renovatebot.com/troubleshooting/
+- https://docs.renovatebot.com/config-presets/
+
+
