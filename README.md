@@ -30,7 +30,7 @@ in `.github/renovate.json5`
   "extends": [
     "github>NullVoxPopuli/renovate:npm.json5"
   ],
- "packageRules": [
+  "packageRules": [
     {
       "matchPaths": ["test-app/package.json"],
       "enabled": false
