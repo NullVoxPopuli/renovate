@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  
+  // requires tests be thorough and reliable
+  //
+  // NOTE: by default, automerge: true will cause open PRs to be
+  //       rebased immediately when they become out of date.
+  "automerge": true,
+  // renovate can be very noisy
+  // setting this allows all the work to happen the night before the start of the week
+  "schedule": ["after 9pm on sunday"],  
+  // this setting prevents updates to PRs from occurring outside the "schedule",
+  // defined above
+  "updateNotScheduled": false,
+  
+  // provides a UI for trigger upgrade PRs, rebasing, etc
+  "masterIssue": true,
+  
+  // for libraries, we don't typically want to bump "dependencies"
+  // unless we really have to (to get an upstream bugfix, for example)
+  "rangeStrategy": "update-lockfile"
+}  
