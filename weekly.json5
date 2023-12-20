@@ -1,6 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
+
+  // for the changelog
+  // note, this field is not mergeable, but replaced in package rules
+  "labels": ["dependencies"],
   
   // requires tests be thorough and reliable
   //
