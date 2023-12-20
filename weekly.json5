@@ -16,6 +16,9 @@
   
   // provides a UI for trigger upgrade PRs, rebasing, etc
   "masterIssue": true,
+
+  // allows us to fix lockfile sync and out of date issues without checking out the code
+  "lockFileMaintenance": true,
   
   // for libraries, we don't typically want to bump "dependencies"
   // unless we really have to (to get an upstream bugfix, for example)
